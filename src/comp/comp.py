@@ -54,7 +54,7 @@ print(d)
 # Write a list comprehension that creates a list of strings which are the name
 # joined to the age with a hyphen, for example "David-31", for all humans.
 print("Name hyphen age:")
-e = [(name.name, name.age) for name in humans]
+e = [f"{name.name}-{name.age}" for name in humans]
 print(e)
 
 # Write a list comprehension that creates a list of tuples containing name and
@@ -68,11 +68,13 @@ print(f)
 # list, except with all the names uppercase and the ages with 5 added to them.
 # The "humans" list should be unmodified.
 print("All names uppercase:")
-g = []
+g = [Human(str(name.name).upper(), name.age + 5) for name in humans]
 print(g)
+
 
 # Write a list comprehension that contains the square root of all the ages.
 print("Square root of ages:")
 import math
 h = [math.sqrt(name.age) for name in humans]
 print(h)
+
